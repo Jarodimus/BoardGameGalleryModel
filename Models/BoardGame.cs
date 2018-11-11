@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 
 namespace boardgamegallerymodel.Models
 {
@@ -18,13 +16,18 @@ namespace boardgamegallerymodel.Models
         public double RegPrice { get; set; }
         public double SpecialPrice { get; set; }
         public string ImageName { get; set; }
-        public string NumberPlayers { get; set; }
         public int ManufacturerId { get; set; }
         public string DescriptionHtml { get; set; }
         public string[] Contents { get; set; }
         public bool Wishlisted { get; set; }
         public bool NewArrival { get; set; }
-
+       
+        //public int PlayerCountId { get; set; }
+        //[ForeignKey("PlayerCountId")]
+        public PlayerCount PlayerCount { get; set; }
+        //public int DesignerId { get; set; }
+        //[ForeignKey("DesignerId")]
+        public Designer Designer { get; set; }
         public Manufacturer Manufacturer { get; set; }
         public ICollection<Mechanic> Mechanics { get; set; }
         public ICollection<BoardGameCategory> Categories { get; set; }
@@ -51,6 +54,15 @@ namespace boardgamegallerymodel.Models
                 Category = category,
                 Subcategories = subcategories
             });
+        }
+
+        public void AddPlayerCount(int minPlayers, int maxPlayers)
+        {
+            PlayerCount = new PlayerCount
+            {
+                MinPlayers = minPlayers,
+                MaxPlayers = maxPlayers
+            };
         }
     }
 }

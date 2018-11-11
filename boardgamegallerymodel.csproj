@@ -54,9 +54,11 @@
     <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="Models\BoardGameCategory.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Designer.cs" />
     <Compile Include="Models\Manufacturer.cs" />
     <Compile Include="Models\BoardGame.cs" />
     <Compile Include="Models\Mechanic.cs" />
+    <Compile Include="Models\PlayerCount.cs" />
     <Compile Include="Models\Subcategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
